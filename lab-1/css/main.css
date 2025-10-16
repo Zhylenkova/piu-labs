@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+
+:root {
+  --bg: #f4f4f9;
+  --text: #222;
+  --form-bg: #fff;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --btn-bg: #ffd700;
+  --btn-text: #000;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --text: #f9f9f9;
+    --form-bg: #2b2b2b;
+    --input-bg: #333;
+    --input-border: #555;
+    --btn-bg: #ffd700;
+    --btn-text: #000;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/*--loginy--*/
+body.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+body.login-page .login-title {
+  color: var(--btn-bg);
+  font-size: 2rem;
+  margin: 20px 0 20px;
+  text-align: center;
+}
+
+body.login-page .form-login {
+  background-color: var(--form-bg);
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px var(--shadow);
+  width: 100%;
+  max-width: 360px;
+}
+
+body.login-page .login_container {
+  margin-bottom: 1rem;
+}
+
+body.login-page .login_container input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+body.login-page .login_container input:focus {
+  outline: none;
+  border-color: var(--btn-bg);
+}
+
+body.login-page .login-container-btn {
+  margin-top: 0.5rem;
+}
+
+body.login-page .login-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.login-page .login-btn:hover {
+  background-color: #e6c200;
+}
+
+/* --uwagi -- */
+body.info-page {
+  display: block;
+  padding: 20px 20px;
+}
+
+body.info-page header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+body.info-page header h1 {
+  font-size: 2.5rem;
+  color: var(--btn-bg);
+  margin-bottom: 10px;
+}
+
+body.info-page header p {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+body.info-page main {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+body.info-page section {
+  background-color: var(--form-bg);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+body.info-page section h2 {
+  font-size: 1.5rem;
+  color: var(--btn-bg);
+  margin-bottom: 12px;
+}
+
+body.info-page section p,
+body.info-page section ul {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+body.info-page section ul {
+  padding-left: 1.4rem;
+}
+
+body.info-page section ul li {
+  margin-bottom: 0.5rem;
+}
+
+body.info-page footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* --index page -- */
+/* ------------------ INDEX PAGE ------------------ */
+body.index-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body.index-page header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+body.index-page header h1 {
+  font-size: 2.5rem;
+  color: var(--btn-bg);
+  margin-bottom: 10px;
+}
+
+body.index-page header p {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+/* Navbar */
+body.index-page .navbar {
+  width: 100%;
+  background-color: var(--form-bg);
+  box-shadow: 0 2px 10px var(--shadow);
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+body.index-page .nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+body.index-page .nav-logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--btn-bg);
+}
+
+body.index-page .nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+body.index-page .nav-links li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+body.index-page .nav-links li a:hover {
+  color: var(--btn-bg);
+}
+
+
+body.index-page .links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+body.index-page .page-link {
+  display: block;
+  padding: 15px;
+  background-color: var(--form-bg);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+body.index-page .page-link:hover {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  transform: translateY(-3px);
+}
+
+
+body.index-page footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+body.index-page footer a {
+  text-decoration: none;
+  color: var(--btn-bg);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+body.index-page footer a:hover {
+  color: #e6c200;
+}
