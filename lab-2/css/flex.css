@@ -73,7 +73,7 @@ legend {
   }
 
   :scope::after {
-    content: "";
+    content: '';
     flex: 0 1 calc((100% - 50px) / 3);
     order: 5;
 
@@ -82,20 +82,6 @@ legend {
     }
   }
 }
-
-/* red  */
-@scope (header:has([value="red"]:checked) + .container) {
-  :scope {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-
-    @media (max-width: 1024px) {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
-  }
 
 /* czerwone */
 @scope (header:has([value="red"]:checked) + .container) {
