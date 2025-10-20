@@ -17,12 +17,15 @@ fieldset,
   border-radius: 5px;
   margin-bottom: 15px;
 }
+legend {
+  padding: 0 10px;
+}
 
 .container {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 25px;
 
   @media (max-width: 1024px) {
     justify-content: center;
@@ -37,12 +40,12 @@ fieldset,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  padding: 10px 0;
-  min-height: 60px;
+  border-radius: 6px;
+  padding: 14px 0;
+  min-height: 56px;
 }
 
-/* niebieski */
+/* niebieski*/
 @scope (header:has([value="blue"]:checked) + .container) {
   .item {
     flex: 0 1 calc((100% - 50px) / 3);
@@ -80,8 +83,19 @@ fieldset,
   }
 }
 
+/* red  */
+@scope (header:has([value="red"]:checked) + .container) {
+  :scope {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
 
-
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+  }
 
 /* czerwone */
 @scope (header:has([value="red"]:checked) + .container) {
@@ -121,7 +135,7 @@ fieldset,
     }
 
     &::after {
-      content: "Jestem większy i na środku!";
+      content: 'Jestem większy i na środku!';
       font-size: 19px;
       font-weight: normal;
       display: block;
@@ -146,9 +160,6 @@ fieldset,
     display: none;
   }
 }
-
-
-
 
 /* zielone */
 @scope (header:has([value="green"]:checked) + .container) {
@@ -187,7 +198,7 @@ fieldset,
 
     &::before,
     &::after {
-      content: "😀";
+      content: '😀';
       position: absolute;
       top: 50%;
       transform: translateY(-50%) scale(2);
@@ -230,8 +241,6 @@ fieldset,
       width: 35%;
     }
   }
-
-
 
   :scope::after {
     display: none;
