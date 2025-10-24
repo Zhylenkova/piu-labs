@@ -214,3 +214,60 @@ h1{margin:0;font-size:clamp(24px,2vw,30px);}
   .photo{ justify-self: center; }
   .info{ max-width: 500px; margin-left: auto; }
 }
+
+.size{
+  position: relative;
+  overflow: visible;
+  transition:
+    transform .18s ease,
+    background-color .25s ease,
+    color .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+  will-change: transform;
+}
+
+
+.size:hover{
+  transform: translateY(-2px);
+}
+
+
+#s-s:checked  ~ .card label[for="s-s"],
+#s-m:checked  ~ .card label[for="s-m"],
+#s-l:checked  ~ .card label[for="s-l"],
+#s-xl:checked ~ .card label[for="s-xl"]{
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent-strong);
+  transform: scale(1.08);                
+  box-shadow: 0 8px 18px rgba(0,0,0,.15); 
+  animation: size-pop .26s ease-out both; 
+}
+
+.size::after{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:12px;
+  border:3px solid var(--accent);
+  opacity:0;
+  transform: scale(.6);
+  pointer-events:none;
+}
+
+#s-s:checked  ~ .card label[for="s-s"]::after,
+#s-xl:checked ~ .card label[for="s-xl"]::after{
+  animation: ring .55s ease-out forwards;
+}
+
+@keyframes size-pop{
+  0%   { transform: scale(.92); }
+  60%  { transform: scale(1.10); }
+  100% { transform: scale(1.08); }
+}
+
+@keyframes ring{
+  0%   { opacity:.45; transform: scale(.6); }
+  100% { opacity:0;   transform: scale(1.25); }
+}
