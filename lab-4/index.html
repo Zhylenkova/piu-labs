@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <meta charset="UTF-8" />
-    <title>Lab 4</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kanban – lab 4</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <header class="app-header">
+      <h1>Tablica Kanban</h1>
+    </header>
+
+    <main id="board" class="board">
+      <section class="column" data-col="todo">
+        <header class="column-header">
+          <h2>
+            Do zrobienia <span class="counter" data-counter="todo">0</span>
+          </h2>
+          <div class="actions">
+            <button class="btn" data-action="add-card">Dodaj kartę</button>
+            <button class="btn" data-action="color-column">
+              Koloruj kolumnę
+            </button>
+            <button class="btn" data-action="sort">Sortuj A→Z</button>
+          </div>
+        </header>
+        <div class="cards" data-list="todo"></div>
+      </section>
+
+      <section class="column" data-col="doing">
+        <header class="column-header">
+          <h2>W trakcie <span class="counter" data-counter="doing">0</span></h2>
+          <div class="actions">
+            <button class="btn" data-action="add-card">Dodaj kartę</button>
+            <button class="btn" data-action="color-column">
+              Koloruj kolumnę
+            </button>
+            <button class="btn" data-action="sort">Sortuj A→Z</button>
+          </div>
+        </header>
+        <div class="cards" data-list="doing"></div>
+      </section>
+
+      <section class="column" data-col="done">
+        <header class="column-header">
+          <h2>Zrobione <span class="counter" data-counter="done">0</span></h2>
+          <div class="actions">
+            <button class="btn" data-action="add-card">Dodaj kartę</button>
+            <button class="btn" data-action="color-column">
+              Koloruj kolumnę
+            </button>
+            <button class="btn" data-action="sort">Sortuj A→Z</button>
+          </div>
+        </header>
+        <div class="cards" data-list="done"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
   </body>
 </html>
